@@ -12,12 +12,12 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 float vertices[] = {
-        0.5f, 0.5f, 0.0f,   // 右上角
-        0.5f, -0.5f, 0.0f,  // 右下角
-        -0.5f, -0.5f, 0.0f, // 左下角
-        -0.5f, 0.5f, 0.0f   // 左上角
-};
+        // positions         // colors
+        0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,  // bottom right
+        -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,  // bottom left
+        0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f   // top
 
+};
 unsigned int indices[] = { // 注意索引从0开始!
         0, 1, 3, // 第一个三角形
         1, 2, 3  // 第二个三角形
@@ -25,17 +25,19 @@ unsigned int indices[] = { // 注意索引从0开始!
 
 const char *vertexShaderSource = "#version 330 core\n"
                                  "layout (location = 0) in vec3 aPos;\n"
+                                 "layout (location = 1) in vec3 aColor;\n"
                                  "out vec4 vertexColor; \n"
                                  "void main()\n"
                                  "{\n"
                                  "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+                                 "   vertexColor = vec4(aColor.x, aColor.y, aColor.z, 1.0);\n"
                                  "}\0";
 const char *fragmentShaderSource = "#version 330 core\n"
                                    "out vec4 FragColor;\n"
-                                   "uniform vec4 ourColor; \n"
+                                   "in vec4 vertexColor; \n"
                                    "void main()\n"
                                    "{\n"
-                                   "   FragColor = ourColor;\n"
+                                   "   FragColor = vertexColor;\n"
                                    "}\n\0";
 
 //                                   "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
@@ -101,8 +103,11 @@ int main() {
     glAttachShader(shaderProgram,fragmentShader);
     glLinkProgram(shaderProgram);
     //
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+    //
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -120,13 +125,15 @@ int main() {
 
         //
         // 更新uniform颜色
-        float timeValue = glfwGetTime();
-        float greenValue = sin(timeValue) / 2.0f + 0.5f;
-        int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+//        float timeValue = glfwGetTime();
+//        float greenValue = sin(timeValue) / 2.0f + 0.5f;
+//        int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+//        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+//        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
         //
         glBindVertexArray(VAO_ID);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES,0,3);
+        //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
@@ -135,6 +142,9 @@ int main() {
         glfwPollEvents();
     }
 
+    glDeleteVertexArrays(1, &VAO_ID);
+    glDeleteBuffers(1, &VBO_ID);
+    glDeleteProgram(shaderProgram);
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
     glfwTerminate();
