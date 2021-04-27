@@ -2,6 +2,7 @@
 #include <math.h>
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
+#include "src/Shader.h"
 
 using namespace std;
 //窗口调整大小的时候调用这个函数
@@ -23,6 +24,7 @@ unsigned int indices[] = { // 注意索引从0开始!
         1, 2, 3  // 第二个三角形
 };
 
+/*
 const char *vertexShaderSource = "#version 330 core\n"
                                  "layout (location = 0) in vec3 aPos;\n"
                                  "layout (location = 1) in vec3 aColor;\n"
@@ -41,6 +43,9 @@ const char *fragmentShaderSource = "#version 330 core\n"
                                    "}\n\0";
 
 //                                   "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+
+*/
+
 /*
  * https://learnopengl-cn.github.io/01%20Getting%20started/03%20Hello%20Window/
  *
@@ -91,17 +96,8 @@ int main() {
     glGenBuffers(1,&EBO_ID);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO_ID);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-    //create shaders
-    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader,1,&vertexShaderSource,NULL);
-    //
-    unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader,1,&fragmentShaderSource,NULL);
-    //
-    unsigned int shaderProgram = glCreateProgram();
-    glAttachShader(shaderProgram,vertexShader);
-    glAttachShader(shaderProgram,fragmentShader);
-    glLinkProgram(shaderProgram);
+
+    Shader* shader = new Shader("../shaderFile/vertex.txt","../shaderFile/fragment.txt");
     //
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
@@ -121,7 +117,8 @@ int main() {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         //
-        glUseProgram(shaderProgram);
+        shader->Use();
+        //glUseProgram(shaderProgram);
 
         //
         // 更新uniform颜色
@@ -144,7 +141,7 @@ int main() {
 
     glDeleteVertexArrays(1, &VAO_ID);
     glDeleteBuffers(1, &VBO_ID);
-    glDeleteProgram(shaderProgram);
+    shader->Del();
     // glfw: terminate, clearing all previously allocated GLFW resources.
     // ------------------------------------------------------------------
     glfwTerminate();

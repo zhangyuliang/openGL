@@ -9,4 +9,11 @@ CMakeFiles/openGL.dir/main.cpp.obj: ../include/GLFW/glfw3.h
 CMakeFiles/openGL.dir/main.cpp.obj: ../include/KHR/khrplatform.h
 CMakeFiles/openGL.dir/main.cpp.obj: ../include/glad/glad.h
 CMakeFiles/openGL.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/openGL.dir/main.cpp.obj: ../src/Shader.h
+
+CMakeFiles/openGL.dir/src/Shader.cpp.obj: ../include/GLFW/glfw3.h
+CMakeFiles/openGL.dir/src/Shader.cpp.obj: ../include/KHR/khrplatform.h
+CMakeFiles/openGL.dir/src/Shader.cpp.obj: ../include/glad/glad.h
+CMakeFiles/openGL.dir/src/Shader.cpp.obj: ../src/Shader.cpp
+CMakeFiles/openGL.dir/src/Shader.cpp.obj: ../src/Shader.h
 

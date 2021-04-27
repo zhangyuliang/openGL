@@ -71,4 +71,16 @@ glad/glad.h
 F:/mac_bak/openGL_Work/Shader/glad/glad.h
 GLFW/glfw3.h
 F:/mac_bak/openGL_Work/Shader/GLFW/glfw3.h
+src/Shader.h
+F:/mac_bak/openGL_Work/Shader/src/Shader.h
+
+F:/mac_bak/openGL_Work/Shader/src/Shader.h
+string
+-
+iostream
+-
+glad/glad.h
+F:/mac_bak/openGL_Work/Shader/src/glad/glad.h
+GLFW/glfw3.h
+F:/mac_bak/openGL_Work/Shader/src/GLFW/glfw3.h
 
