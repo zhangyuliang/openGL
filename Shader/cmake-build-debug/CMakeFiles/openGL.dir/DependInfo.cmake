@@ -15,6 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "F:/mac_bak/openGL_Work/Shader/main.cpp" "F:/mac_bak/openGL_Work/Shader/cmake-build-debug/CMakeFiles/openGL.dir/main.cpp.obj"
+  "F:/mac_bak/openGL_Work/Shader/src/Shader.cpp" "F:/mac_bak/openGL_Work/Shader/cmake-build-debug/CMakeFiles/openGL.dir/src/Shader.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

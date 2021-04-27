@@ -85,6 +85,12 @@
 		<Unit filename="F:/mac_bak/openGL_Work/Shader/main.cpp">
 			<Option target="openGL"/>
 		</Unit>
+		<Unit filename="F:/mac_bak/openGL_Work/Shader/src/Shader.cpp">
+			<Option target="openGL"/>
+		</Unit>
+		<Unit filename="F:/mac_bak/openGL_Work/Shader/src/Shader.h">
+			<Option target="openGL"/>
+		</Unit>
 		<Unit filename="F:/mac_bak/openGL_Work/Shader/src/glad.c">
 			<Option target="openGL"/>
 		</Unit>

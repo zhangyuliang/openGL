@@ -149,6 +149,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\openGL.dir\build.make CMakeFiles/openGL.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Shader.obj: src/Shader.cpp.obj
+
+.PHONY : src/Shader.obj
+
+# target to build an object file
+src/Shader.cpp.obj:
+	$(MAKE) -f CMakeFiles\openGL.dir\build.make CMakeFiles/openGL.dir/src/Shader.cpp.obj
+.PHONY : src/Shader.cpp.obj
+
+src/Shader.i: src/Shader.cpp.i
+
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles\openGL.dir\build.make CMakeFiles/openGL.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles\openGL.dir\build.make CMakeFiles/openGL.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
+
 src/glad.obj: src/glad.c.obj
 
 .PHONY : src/glad.obj
@@ -188,6 +215,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/Shader.obj
+	@echo ... src/Shader.i
+	@echo ... src/Shader.s
 	@echo ... src/glad.obj
 	@echo ... src/glad.i
 	@echo ... src/glad.s
