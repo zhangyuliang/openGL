@@ -1,0 +1,1 @@
+ -LF:/mac_bak/openGL_Work/Shader/lib -lopengl32 ../lib/glfw3.dll -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
