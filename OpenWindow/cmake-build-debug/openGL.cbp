@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="openGL"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="openGL">
+				<Option output="F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/openGL.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/mac_bak/openGL_Work/OpenWindow/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 openGL"/>
+					<CompileFile command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="openGL/fast">
+				<Option output="F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/openGL.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="F:/mac_bak/openGL_Work/OpenWindow/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/Program Files (x86)/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 openGL/fast"/>
+					<CompileFile command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/PROGRA~2/MINGW-~2/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;F:/mac_bak/openGL_Work/OpenWindow/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/mac_bak/openGL_Work/OpenWindow/main.cpp">
+			<Option target="openGL"/>
+		</Unit>
+		<Unit filename="F:/mac_bak/openGL_Work/OpenWindow/src/glad.c">
+			<Option target="openGL"/>
+		</Unit>
+		<Unit filename="F:/mac_bak/openGL_Work/OpenWindow/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
