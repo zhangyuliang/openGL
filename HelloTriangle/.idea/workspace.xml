@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="openGL" targetName="openGL" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70afd1d8-8081-4087-a0d5-d23adfb2a414" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ri0GYnb0f4znfAYROWEw7JfU7R" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration name="openGL" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="openGL" TARGET_NAME="openGL" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="openGL" RUN_TARGET_NAME="openGL">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70afd1d8-8081-4087-a0d5-d23adfb2a414" name="Default Changelist" comment="" />
+      <created>1619443508091</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619443508091</updated>
+      <workItem from="1619443510420" duration="1843000" />
+      <workItem from="1619491726402" duration="1222000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1619492949357">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="149" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1619445493115" />
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619492949357" />
+    <state width="1877" height="266" key="GridCell.Tab.0.center" timestamp="1619492949356">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="149" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1619445493115" />
+    <state width="1877" height="266" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619492949356" />
+    <state width="1877" height="266" key="GridCell.Tab.0.left" timestamp="1619492949356">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="149" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1619445493115" />
+    <state width="1877" height="266" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619492949356" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right" timestamp="1619492949357">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="149" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1619445493115" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619492949357" />
+    <state x="461" y="167" key="SettingsEditor" timestamp="1619443649451">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="167" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1619443649451" />
+    <state x="640" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1619493220096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1619443511136" />
+    <state x="640" y="346" key="com.intellij.ide.util.TipDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619493220096" />
+  </component>
+</project>
