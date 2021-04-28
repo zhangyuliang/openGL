@@ -7,3 +7,9 @@
 #### 创建一个窗口
 
 #### 画一个三角形
+
+#### Shader基础学习
+
+#### Texture基础学习
+
+#### Transformations变换
