@@ -38,15 +38,18 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath){
         unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertexShader,1,&vertexSource,NULL);
         glCompileShader(vertexShader);
+        checkCompileErrors(vertexShader,"VERTEX");
 
         unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
         glShaderSource(fragmentShader,1,&fragmentSource,NULL);
         glCompileShader(fragmentShader);
+        checkCompileErrors(fragmentShader,"FRAGMENT");
 
         shaderProgramId = glCreateProgram();
         glAttachShader(shaderProgramId,vertexShader);
         glAttachShader(shaderProgramId,fragmentShader);
         glLinkProgram(shaderProgramId);
+        checkCompileErrors(shaderProgramId,"PROGRAM");
 
     }catch (const exception& exc){
         printf(exc.what());
