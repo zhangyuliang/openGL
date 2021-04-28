@@ -5,22 +5,29 @@
 #include "src/Shader.h"
 
 #define STB_IMAGE_IMPLEMENTATION
+
 #include "src/stb_image.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 using namespace std;
+
 //窗口调整大小的时候调用这个函数
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow* window);
+void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+
+void processInput(GLFWwindow *window);
 
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 float vertices[] = {
 //     ---- 位置 ----       ---- 颜色 ----     - 纹理坐标 -
-        0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
-        0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
-        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
-        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+        0.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f,   // 右上
+        0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f,   // 右下
+        -0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,   // 左下
+        -0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f    // 左上
 };
 unsigned int indices[] = { // 注意索引从0开始!
         0, 1, 3, // 第一个三角形
@@ -36,17 +43,16 @@ unsigned int indices[] = { // 注意索引从0开始!
 int main() {
     glfwInit();
     //我们将主版本号(Major)和次版本号(Minor)都设为3。
-    glfwInitHint(GLFW_CONTEXT_VERSION_MAJOR,3);
-    glfwInitHint(GLFW_CONTEXT_VERSION_MINOR,3);
+    glfwInitHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwInitHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     //我们同样明确告诉GLFW我们使用的是核心模式(Core-profile)。明确告诉GLFW我们需要使用核心模式意味着我们只能使用OpenGL功能的一个子集（没有我们已不再需要的向后兼容特性）。
-    glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
+    glfwInitHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     //如果使用的是Mac OS X系统，你还需要加下面这行代码到你的初始化代码中这些配置才能起作用（将上面的代码解除注释）
     //glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
     //
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
-    if (window == NULL)
-    {
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    if (window == NULL) {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;
@@ -57,37 +63,36 @@ int main() {
 
     // glad: load all OpenGL function pointers 初始化glad
     // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
+    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
 
     //VBO
     unsigned int VBO_ID;
-    glGenBuffers(1,&VBO_ID);
-    glBindBuffer(GL_ARRAY_BUFFER,VBO_ID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices),vertices,GL_STATIC_DRAW);
+    glGenBuffers(1, &VBO_ID);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO_ID);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     //VAO
     unsigned int VAO_ID;
-    glGenVertexArrays(1,&VAO_ID);
+    glGenVertexArrays(1, &VAO_ID);
     glBindVertexArray(VAO_ID);
     //EBO
     unsigned int EBO_ID;
-    glGenBuffers(1,&EBO_ID);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO_ID);
+    glGenBuffers(1, &EBO_ID);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO_ID);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
     //
     stbi_set_flip_vertically_on_load(true);
     //
-    Shader* shader = new Shader("../shaderFile/vertex.txt","../shaderFile/fragment.txt");
+    Shader *shader = new Shader("../shaderFile/vertex.txt", "../shaderFile/fragment.txt");
     //
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *) 0);
     glEnableVertexAttribArray(0);
     //
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *) (3 * sizeof(float)));
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void *) (6 * sizeof(float)));
     glEnableVertexAttribArray(2);
     //
     unsigned int Texture_ID1;
@@ -102,11 +107,10 @@ int main() {
     int width, height, nrChannels;
     //filename 貌似要相对于stbi_image.h文件路径去算
     unsigned char *data = stbi_load("../texture/container.jpg", &width, &height, &nrChannels, 0);
-    if(data){
+    if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
-    }else
-    {
+    } else {
         std::cout << "Failed to load texture" << std::endl;
     }
     stbi_image_free(data);
@@ -117,18 +121,17 @@ int main() {
 
     //filename 貌似要相对于stbi_image.h文件路径去算
     unsigned char *data2 = stbi_load("../texture/awesomeface.png", &width, &height, &nrChannels, 0);
-    if(data2){
+    if (data2) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data2);
         glGenerateMipmap(GL_TEXTURE_2D);
-    }else
-    {
+    } else {
         std::cout << "Failed to load texture" << std::endl;
     }
     stbi_image_free(data2);
     // render loop
+
     // -----------
-    while (!glfwWindowShouldClose(window))
-    {
+    while (!glfwWindowShouldClose(window)) {
         // input
         // -----
         processInput(window);
@@ -151,10 +154,16 @@ int main() {
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, Texture_ID2);
         //
+        glm::mat4 trans = glm::mat4(1.0f);
+        trans = glm::translate(trans,glm::vec3(-0.5f,0,0));
+        //trans = glm::rotate(trans, 45.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+        unsigned int transformLoc = glGetUniformLocation(shader->shaderProgramId, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+        //
         shader->Use();
         //glUseProgram(shaderProgram);
-        glUniform1i(glGetUniformLocation(shader->shaderProgramId,"ourTexture1"),0);
-        glUniform1i(glGetUniformLocation(shader->shaderProgramId,"ourTexture2"),1);
+        glUniform1i(glGetUniformLocation(shader->shaderProgramId, "ourTexture1"), 0);
+        glUniform1i(glGetUniformLocation(shader->shaderProgramId, "ourTexture2"), 1);
         //
         glBindVertexArray(VAO_ID);
         //glDrawArrays(GL_TRIANGLES,0,3);
@@ -179,16 +188,14 @@ int main() {
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow *window)
-{
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+void processInput(GLFWwindow *window) {
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 // ---------------------------------------------------------------------------------------------
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
+void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
     // make sure the viewport matches the new window dimensions; note that width and
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
